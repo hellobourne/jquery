@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validate</title>
+    <script type="text/javascript" src="http://www.imooc.com/data/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="http://www.imooc.com/data/jquery.validate.js"></script>
+    <script type="text/javascript" src="http://www.imooc.com/data/jquery.validate.messages_cn.js"></script>
+    <script>
+        $(function () {
+           $("#frmV").validate({
+               rules:{
+                   email:{
+                       required:true,
+                       email:true
+                   }
+               },
+               /*错误提示位置*/
+               errorPlacement: function (error, element) {
+                   error.appendTo(".tip");
+               }
+           });
+        });
+    </script>
+</head>
+<body>
+    <form id="frmV" method="get" action="#">
+        <div class="divTest">
+            <div class="title">
+                <span class="fl">表单验证插件</span>
+                <span class="fr">
+                    <input id="btnSubmit" type="submit" value="提交">
+                </span>
+            </div>
+            <div class="content">
+                <span class="fl">邮箱:</span><br />
+                <input id="email" name="email" type="text"/><br />
+                <span class="tip">surprise,motherfucker</span>
+            </div>
+        </div>
+    </form>
+</body>
+</html>

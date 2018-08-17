@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>将校验规则写到控件中</title>
+    <script type="text/javascript" src="http://www.imooc.com/data/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="http://www.imooc.com/data/jquery.validate.js"></script>
+    <script type="text/javascript" src="http://www.imooc.com/data/jquery.validate.messages_cn.js"></script>
+</head>
+<body>
+    <form class="cmxform" id="commentform" method="get" action="#">
+        <fieldset>
+            <legend>请输入姓名，邮箱，URL，备注</legend>
+            <p>
+                <label for="cname">姓名(必须,最少两个字母)</label>
+                <input id="cname" name="name" type="text" minlength="2" required>
+            </p>
+            <p>
+                <label for="cemail">邮箱(必须)</label>
+                <input id="cemail" name="email" type="email" required>
+            </p>
+            <p>
+                <label for="curl">url(可选)</label>
+                <input id="curl" name="url" type="url" readonly>
+            </p>
+            <p>
+                <label for="ccomment">备注(必须)</label>
+                <textarea id="ccomment" name="comment" required ></textarea>
+            </p>
+            <p>
+                <input class="submit" type="submit" value="submit">
+            </p>
+        </fieldset>
+    </form>
+</body>
+</html>
